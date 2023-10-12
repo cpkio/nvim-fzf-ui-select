@@ -18,12 +18,12 @@ M.ui_select = function(items, options, on_choice)
       local supplementary_fzf_options
       local _row = 0
       if row < math.ceil(win_h/2) then
-        supplementary_fzf_options = (term.fzf_colors .. ' --ansi --reverse --prompt="Choice> "')
+        supplementary_fzf_options = (term.fzf_colors .. ' --padding=0,1,1,1 --ansi --reverse --prompt="Choice> "')
         _row = 1
         float_height = win_h - row
       else
-        supplementary_fzf_options = (term.fzf_colors .. ' --ansi --prompt="Choice> "')
-        _row = _row - #items - 3
+        supplementary_fzf_options = (term.fzf_colors .. ' --padding=1,1,0,1 --ansi --prompt="Choice> "')
+        _row = _row - #items - 2
         float_height = row
       end
 
@@ -35,7 +35,7 @@ M.ui_select = function(items, options, on_choice)
               row = _row,
               col = 0,
               width = 60,
-              height = math.min(#items + 3, float_height),
+              height = math.min(#items + 2, float_height),
               noautocmd = true
             })
         end
