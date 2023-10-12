@@ -7,6 +7,8 @@ Built with
 [luasnip-antora-locator](https://github.com/cpkio/luasnip-antora-locator) in
 mind.
 
+![2023-10-12_181433](https://github.com/cpkio/nvim-fzf-ui-select/assets/1917113/13291fbd-341c-4cf2-9a40-6c089474e306)
+
 ## Requirements
 
 * `fzf` in path
