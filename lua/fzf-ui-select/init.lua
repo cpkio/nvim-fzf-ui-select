@@ -54,7 +54,7 @@ M.ui_select = function(items, options, on_choice)
 
       local mode = vim.api.nvim_get_mode()
       if not mode.mode:match("^n") then
-        feed_keys_termcodes('<C-o>i')
+        feed_keys_termcodes('<C-o>')
       end
 
       local line = options.fzf(i, supplementary_fzf_options)
