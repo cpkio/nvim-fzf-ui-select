@@ -23,11 +23,11 @@ M.ui_select = function(items, options, on_choice)
       local supplementary_fzf_options
       local _row = 0 -- row to start drawing popup
       if pos < math.ceil(win_h/2) then
-        supplementary_fzf_options = (term.fzf_colors .. ' --padding=0,1,1,1 --ansi --reverse --prompt="Choice> "')
+        supplementary_fzf_options = (term.fzf_colors .. ' --padding=0,1,1,1 --ansi --reverse --prompt="> "')
         float_height_max = win_h - (pos + 1)
         _row = 1
       else
-        supplementary_fzf_options = (term.fzf_colors .. ' --padding=1,1,0,1 --ansi --prompt="Choice> "')
+        supplementary_fzf_options = (term.fzf_colors .. ' --padding=1,1,0,1 --ansi --prompt="> "')
         float_height_max = pos - 1
         _row = -math.min(float_height_max, float_height)
       end
@@ -48,7 +48,7 @@ M.ui_select = function(items, options, on_choice)
 
       local i = {}
       for k, v in ipairs(items) do
-        table.insert(i, term.red .. string.format('%4d', k) .. term.reset .. string.rep(utils.delim,3) .. v)
+        table.insert(i, term.red .. string.format('%2d', k) .. term.reset .. string.rep(utils.delim,3) .. v)
       end
 
 
